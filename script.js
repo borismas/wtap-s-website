@@ -328,3 +328,27 @@ setInterval(
   100
 );
 ```
+```javascript
+/* =========================
+   CUSTOM CURSOR HOVER EFFECT
+========================= */
+
+const cursor = document.querySelector(".cursor-glow");
+
+const interactiveElements = document.querySelectorAll(
+  "a, button"
+);
+
+interactiveElements.forEach(element => {
+
+  element.addEventListener("mouseenter", () => {
+    cursor.classList.add("hover");
+  });
+
+  element.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
+
+});
+```
+
