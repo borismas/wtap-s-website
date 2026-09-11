@@ -1,6 +1,7 @@
 ```css
 * {
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 :root {
@@ -18,12 +19,10 @@
   --border: rgba(54, 255, 125, 0.18);
 }
 
-
 html,
 body {
   min-height: 100%;
 }
-
 
 body {
   margin: 0;
@@ -42,7 +41,7 @@ body {
 
   overflow-x: hidden;
 
-  cursor: none;
+  cursor: none !important;
 }
 
 
@@ -56,6 +55,8 @@ body {
   height: 100%;
 
   z-index: -3;
+
+  pointer-events: none;
 }
 
 
@@ -105,9 +106,7 @@ body {
   animation: terminal-in 0.7s ease;
 }
 
-
 @keyframes terminal-in {
-
   from {
     opacity: 0;
     transform: translateY(15px) scale(0.99);
@@ -117,7 +116,6 @@ body {
     opacity: 1;
     transform: none;
   }
-
 }
 
 
@@ -136,13 +134,10 @@ body {
   background: rgba(10, 15, 12, 0.8);
 }
 
-
 .dots {
   display: flex;
-
   gap: 7px;
 }
-
 
 .dots span {
   width: 11px;
@@ -154,7 +149,6 @@ body {
 
   border: 1px solid #3a4c40;
 }
-
 
 .window-title {
   position: absolute;
@@ -192,21 +186,17 @@ body {
   flex-wrap: wrap;
 }
 
-
 .green {
   color: var(--green);
 }
-
 
 .blue {
   color: var(--blue);
 }
 
-
 .command {
   color: #e2e8e4;
 }
-
 
 .accent {
   color: var(--green);
@@ -224,7 +214,6 @@ body {
 
   margin: 5px 0 30px;
 }
-
 
 .avatar-wrap {
   width: 100px;
@@ -249,7 +238,6 @@ body {
     0 0 35px rgba(57, 255, 136, 0.14);
 }
 
-
 .avatar {
   width: 100%;
   height: 100%;
@@ -262,7 +250,6 @@ body {
 
   background: #0b110e;
 }
-
 
 .avatar-fallback {
   display: none;
@@ -283,7 +270,6 @@ body {
   font-weight: 700;
 }
 
-
 .name-row {
   display: flex;
 
@@ -291,7 +277,6 @@ body {
 
   gap: 11px;
 }
-
 
 h1 {
   margin: 0;
@@ -306,7 +291,6 @@ h1 {
     0 0 25px rgba(57, 255, 136, 0.18);
 }
 
-
 .online {
   width: 9px;
   height: 9px;
@@ -319,7 +303,6 @@ h1 {
     0 0 12px var(--green);
 }
 
-
 .tagline {
   color: #9aa89f;
 
@@ -327,7 +310,6 @@ h1 {
 
   font-size: 13px;
 }
-
 
 .status {
   color: var(--muted);
@@ -337,18 +319,14 @@ h1 {
   margin: 0;
 }
 
-
 .blink {
   animation: blink 1s steps(2) infinite;
 }
 
-
 @keyframes blink {
-
   50% {
     opacity: 0;
   }
-
 }
 
 
@@ -394,7 +372,6 @@ h1 {
   line-height: 1.8;
 }
 
-
 .about p {
   margin: 0;
 }
@@ -411,7 +388,6 @@ h1 {
 
   margin-bottom: 29px;
 }
-
 
 .link {
   display: flex;
@@ -435,7 +411,6 @@ h1 {
   transition: 0.2s ease;
 }
 
-
 .link:hover {
   transform: translateY(-3px);
 
@@ -445,13 +420,11 @@ h1 {
     0 8px 30px rgba(57, 255, 136, 0.07);
 }
 
-
 .link-icon {
   color: var(--green);
 
   font-size: 19px;
 }
-
 
 .link-info {
   flex: 1;
@@ -459,13 +432,11 @@ h1 {
   min-width: 0;
 }
 
-
 .link-info b {
   display: block;
 
   font-size: 12px;
 }
-
 
 .link-info small {
   display: block;
@@ -476,7 +447,6 @@ h1 {
 
   margin-top: 3px;
 }
-
 
 .arrow {
   color: #657168;
@@ -497,7 +467,6 @@ h1 {
   overflow: hidden;
 }
 
-
 .ascii {
   margin: 0;
 
@@ -513,7 +482,6 @@ h1 {
     0 0 10px rgba(57, 255, 136, 0.18);
 }
 
-
 .stats {
   font-size: 10px;
 
@@ -521,7 +489,6 @@ h1 {
 
   color: #87948c;
 }
-
 
 .stats div span {
   display: inline-block;
@@ -546,7 +513,6 @@ h1 {
   margin-bottom: 25px;
 }
 
-
 .album {
   width: 48px;
   height: 48px;
@@ -566,22 +532,18 @@ h1 {
   border: 1px solid var(--border);
 }
 
-
 .track {
   flex: 1;
 }
-
 
 .track b,
 .track small {
   display: block;
 }
 
-
 .track b {
   font-size: 11px;
 }
-
 
 .track small {
   color: var(--muted);
@@ -590,7 +552,6 @@ h1 {
 
   margin-top: 4px;
 }
-
 
 .progress {
   height: 2px;
@@ -602,7 +563,6 @@ h1 {
   overflow: hidden;
 }
 
-
 .progress i {
   display: block;
 
@@ -613,15 +573,12 @@ h1 {
   background: var(--green);
 }
 
-
 #play {
   border: 0;
 
   background: transparent;
 
   color: var(--green);
-
-  cursor: none;
 
   font-size: 16px;
 
@@ -643,7 +600,6 @@ footer {
   padding-top: 8px;
 }
 
-
 footer strong {
   color: var(--green-dark);
 
@@ -651,28 +607,54 @@ footer strong {
 }
 
 
-/* CURSOR */
+/* =========================
+   CUSTOM CURSOR
+========================= */
 
 .cursor-glow {
   position: fixed;
 
-  width: 250px;
-  height: 250px;
+  width: 12px;
+  height: 12px;
 
   border-radius: 50%;
 
   pointer-events: none;
 
-  z-index: 20;
+  z-index: 99999;
 
   transform: translate(-50%, -50%);
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(57, 255, 136, 0.08),
-      transparent 65%
-    );
+  background: var(--green);
+
+  box-shadow:
+    0 0 6px var(--green),
+    0 0 15px var(--green),
+    0 0 30px rgba(57, 255, 136, 0.65);
+
+  transition:
+    width 0.15s ease,
+    height 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+
+  mix-blend-mode: screen;
+}
+
+
+/* Make cursor grow when hovering links/buttons */
+
+.cursor-glow.hover {
+  width: 22px;
+  height: 22px;
+
+  background: transparent;
+
+  border: 1px solid var(--green);
+
+  box-shadow:
+    0 0 8px var(--green),
+    0 0 20px rgba(57, 255, 136, 0.7);
 }
 
 
@@ -681,7 +663,11 @@ footer strong {
 @media (max-width: 650px) {
 
   body {
-    cursor: auto;
+    cursor: auto !important;
+  }
+
+  * {
+    cursor: auto !important;
   }
 
   .cursor-glow {
@@ -712,14 +698,5 @@ footer strong {
   }
 
   .neofetch {
-    flex-direction: column;
-
-    gap: 18px;
-  }
-
-  .ascii {
-    font-size: 8px;
-  }
-
-}https://github.com/borismashttps://github.com/borismashttps://github.com/borismas
+    flex
 ```
