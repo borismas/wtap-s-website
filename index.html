@@ -1,0 +1,272 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="wtap — personal profile">
+  <title>wtap@arch:~</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="scanlines"></div>
+
+<div class="cursor-glow"></div>
+
+<main class="terminal">
+
+  <header class="titlebar">
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="window-title">
+      wtap@arch: ~
+    </div>
+  </header>
+
+
+  <section class="content">
+
+    <div class="prompt">
+      <span class="green">wtap@arch</span>:<span class="blue">~</span>$
+      <span class="command">whoami</span>
+    </div>
+
+
+    <section class="profile">
+
+      <div class="avatar-wrap">
+
+        <!-- Put your own image here -->
+        <!-- Rename your image to avatar.png -->
+
+        <img
+          src="avatar.png"
+          class="avatar"
+          alt="wtap"
+          onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='grid'"
+        >
+
+        <div class="avatar-fallback">
+          W
+        </div>
+
+      </div>
+
+
+      <div class="identity">
+
+        <div class="name-row">
+
+          <h1>wtap</h1>
+
+          <span class="online"></span>
+
+        </div>
+
+        <p class="tagline">
+          just another user on the internet<span class="blink">_</span>
+        </p>
+
+        <p class="status">
+          <span class="green">●</span>
+          online · linux enthusiast
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <div class="prompt">
+      <span class="green">wtap@arch</span>:<span class="blue">~</span>$
+      <span class="command">cat about.txt</span>
+    </div>
+
+
+    <section class="box about">
+
+      <p>
+        <span class="green">01</span>
+        welcome to my corner of the internet.
+      </p>
+
+      <p>
+        <span class="green">02</span>
+        linux, games, design & random projects.
+      </p>
+
+      <p>
+        <span class="green">03</span>
+        currently running <span class="accent">arch linux</span>.
+      </p>
+
+    </section>
+
+
+    <div class="prompt">
+      <span class="green">wtap@arch</span>:<span class="blue">~</span>$
+      <span class="command">ls socials/</span>
+    </div>
+
+
+    <section class="links">
+
+      <a href="https://github.com/" class="link" target="_blank">
+        <span class="link-icon">⌘</span>
+
+        <span class="link-info">
+          <b>github</b>
+          <small>projects & code</small>
+        </span>
+
+        <span class="arrow">↗</span>
+      </a>
+
+
+      <a href="https://discord.com/" class="link" target="_blank">
+        <span class="link-icon">◈</span>
+
+        <span class="link-info">
+          <b>discord</b>
+          <small>come say hi</small>
+        </span>
+
+        <span class="arrow">↗</span>
+      </a>
+
+
+      <a href="#" class="link">
+        <span class="link-icon">◎</span>
+
+        <span class="link-info">
+          <b>website</b>
+          <small>you're already here</small>
+        </span>
+
+        <span class="arrow">↗</span>
+      </a>
+
+    </section>
+
+
+    <div class="prompt">
+      <span class="green">wtap@arch</span>:<span class="blue">~</span>$
+      <span class="command">neofetch</span>
+    </div>
+
+
+    <section class="box neofetch">
+
+      <pre class="ascii">
+       _        _     
+__  __| |_ __ _| |_   
+\ \/ /| __/ _` | __|  
+ &gt;  &lt; | || (_| | |_   
+/_/\_\ \__\__,_|\__|
+      </pre>
+
+
+      <div class="stats">
+
+        <div>
+          <span>OS</span>
+          Arch Linux x86_64
+        </div>
+
+        <div>
+          <span>Host</span>
+          wtap's machine
+        </div>
+
+        <div>
+          <span>Shell</span>
+          zsh
+        </div>
+
+        <div>
+          <span>WM</span>
+          KDE Plasma / Wayland
+        </div>
+
+        <div>
+          <span>Uptime</span>
+          <b id="uptime">0d 0h 0m</b>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="prompt">
+      <span class="green">wtap@arch</span>:<span class="blue">~</span>$
+      <span class="command">music --now-playing</span>
+    </div>
+
+
+    <section class="box music">
+
+      <div class="album">
+        ♪
+      </div>
+
+      <div class="track">
+
+        <b>your song here</b>
+
+        <small>
+          your artist
+        </small>
+
+        <div class="progress">
+          <i id="progress"></i>
+        </div>
+
+      </div>
+
+      <button id="play">
+        ▶
+      </button>
+
+    </section>
+
+
+    <footer>
+
+      <span>
+        © <span id="year"></span> wtap
+      </span>
+
+      <span>
+        visitors:
+        <strong id="visitors">000001</strong>
+      </span>
+
+    </footer>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
