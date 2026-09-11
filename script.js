@@ -155,30 +155,7 @@ drawParticles();
 
 
 
-/* =========================
-   CURSOR GLOW
-========================= */
 
-const glow =
-  document.querySelector(".cursor-glow");
-
-
-window.addEventListener(
-  "mousemove",
-  function (event) {
-
-    glow.style.left =
-      event.clientX + "px";
-
-    glow.style.top =
-      event.clientY + "px";
-
-  }
-);
-
-
-
-/* =========================
    UPTIME
 ========================= */
 
@@ -333,22 +310,27 @@ setInterval(
    CUSTOM CURSOR HOVER EFFECT
 ========================= */
 
-const cursor = document.querySelector(".cursor-glow");
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.querySelector(".cursor-glow");
 
-const interactiveElements = document.querySelectorAll(
-  "a, button"
-);
+  if (!cursor) {
+    console.error("Cursor element not found!");
+    return;
+  }
 
-interactiveElements.forEach(element => {
-
-  element.addEventListener("mouseenter", () => {
-    cursor.classList.add("hover");
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
   });
 
-  element.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-  });
+  document.querySelectorAll("a, button").forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      cursor.classList.add("hover");
+    });
 
+    element.addEventListener("mouseleave", () => {
+      cursor.classList.remove("hover");
+    });
+  });
 });
-```
 
