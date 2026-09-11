@@ -607,38 +607,49 @@ footer strong {
 }
 
 
-/* =========================
-   CUSTOM CURSOR
-========================= */
+/* CUSTOM CURSOR */
+* {
+  cursor: none !important;
+}
 
 .cursor-glow {
   position: fixed;
-
-  width: 12px;
-  height: 12px;
-
+  width: 14px;
+  height: 14px;
+  background: #00ff66;
   border-radius: 50%;
-
   pointer-events: none;
-
-  z-index: 99999;
-
+  z-index: 999999;
   transform: translate(-50%, -50%);
-
-  background: var(--green);
-
   box-shadow:
-    0 0 6px var(--green),
-    0 0 15px var(--green),
-    0 0 30px rgba(57, 255, 136, 0.65);
-
+    0 0 8px #00ff66,
+    0 0 20px #00ff66;
   transition:
     width 0.15s ease,
     height 0.15s ease,
     background 0.15s ease,
     box-shadow 0.15s ease;
+}
 
-  mix-blend-mode: screen;
+.cursor-glow.hover {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 2px solid #00ff66;
+  box-shadow:
+    0 0 10px #00ff66,
+    0 0 25px #00ff66;
+}
+
+/* Don't use custom cursor on phones */
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
 }
 
 
